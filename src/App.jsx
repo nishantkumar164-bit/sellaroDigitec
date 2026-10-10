@@ -39,6 +39,8 @@ import {
   GoogleProductsListing,
   GoogleShoppingAds
 } from './pages/services/DigitalMarketingSubpages';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 
 
@@ -221,7 +223,8 @@ const App = () => {
     />
   }
 />
-
+<Route path="/blog" element={<Blog />} />
+<Route path="/blog/:slug" element={<BlogPost />} />
 
           </Routes>
         </main>
