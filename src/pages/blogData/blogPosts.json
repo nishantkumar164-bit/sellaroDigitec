@@ -1,9 +1,9 @@
 [
   {
-    "slug": "amazon-marketplace-management-guide",
+    "slug": "amz-marketplace-management-guide",
     "status": "published",
-    "title": "Amazon Marketplace Management: A Complete Guide for Sellers",
-    "description": "Learn how Amazon marketplace management works, from product listings and inventory to advertising, order operations, and performance optimization.",
+    "title": "Amz Marketplace Management: A Complete Guide for Sellers",
+    "description": "Learn how Amz marketplace management works, from product listings and inventory to advertising, order operations, and performance optimization.",
     "publishedAt": "2026-10-10",
     "updatedAt": "2026-10-10",
     "author": "Sellaro Digitec Team",
@@ -19,16 +19,16 @@
     "content": [
       {
         "type": "paragraph",
-        "text": "Selling on Amazon involves more than listing products. Sellers must manage product information, inventory, orders, customer experience, advertising, and marketplace performance. A structured marketplace management process can help businesses coordinate these activities as they grow."
+        "text": "Selling on Amz involves more than listing products. Sellers must manage product information, inventory, orders, customer experience, advertising, and marketplace performance. A structured marketplace management process can help businesses coordinate these activities as they grow."
       },
       {
         "type": "heading",
         "level": 2,
-        "text": "What is Amazon marketplace management?"
+        "text": "What is Amz marketplace management?"
       },
       {
         "type": "paragraph",
-        "text": "Amazon marketplace management is the process of maintaining and improving a seller's presence on Amazon. Depending on the business, this may include catalog management, product listing optimization, inventory coordination, advertising support, order monitoring, and performance reporting."
+        "text": "Amz marketplace management is the process of maintaining and improving a seller's presence on Amz. Depending on the business, this may include catalog management, product listing optimization, inventory coordination, advertising support, order monitoring, and performance reporting."
       },
       {
         "type": "heading",
@@ -73,7 +73,7 @@
     "slug": "multi-marketplace-management-guide",
     "status": "published",
     "title": "How to Sell on Multiple Marketplaces Without Managing Everything Manually",
-    "description": "Learn how to manage Amazon, Flipkart, Meesho, Etsy, eBay, and Walmart with inventory synchronization, order automation, and marketplace management services.",
+    "description": "Learn how to manage Amz, Flipkart, Meesho, Etsy, eBay, and Walmart with inventory synchronization, order automation, and marketplace management services.",
     "publishedAt": "2026-10-11",
     "updatedAt": "2026-10-11",
     "author": "Sellaro Digitec Team",
@@ -95,7 +95,7 @@
       },
       {
         "type": "paragraph",
-        "text": "If you sell on Amazon, Flipkart, Meesho, Etsy, eBay, or Walmart, repetitive manual work can consume valuable time. By combining the right tools, standardized processes, and professional marketplace management, businesses can simplify daily operations and scale more efficiently."
+        "text": "If you sell on Amz, Flipkart, Meesho, Etsy, eBay, or Walmart, repetitive manual work can consume valuable time. By combining the right tools, standardized processes, and professional marketplace management, businesses can simplify daily operations and scale more efficiently."
       },
       {
         "type": "heading",
@@ -127,7 +127,7 @@
       },
       {
         "type": "paragraph",
-        "text": "For example, if a seller has 100 units available and receives an order for 10 units on Amazon, the inventory workflow should update the available quantity and communicate the change to other connected marketplaces. The exact timing depends on the integration and marketplace APIs."
+        "text": "For example, if a seller has 100 units available and receives an order for 10 units on Amz, the inventory workflow should update the available quantity and communicate the change to other connected marketplaces. The exact timing depends on the integration and marketplace APIs."
       },
       {
         "type": "paragraph",
@@ -259,7 +259,7 @@
       {
         "type": "heading",
         "level": 3,
-        "text": "Can I sell on Amazon, Flipkart, Meesho, and other marketplaces at the same time?"
+        "text": "Can I sell on Amz, Flipkart, Meesho, and other marketplaces at the same time?"
       },
       {
         "type": "paragraph",
