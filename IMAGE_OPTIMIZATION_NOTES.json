@@ -1,0 +1,77 @@
+{
+  "optimization": "Converted selected large service PNGs to WebP; original PNGs retained.",
+  "files": [
+    {
+      "original": "dist/image/illustrations/shopify.png",
+      "optimized": "dist/image/illustrations/shopify.webp",
+      "original_bytes": 2264139,
+      "optimized_bytes": 33806
+    },
+    {
+      "original": "dist/image/illustrations/google.png",
+      "optimized": "dist/image/illustrations/google.webp",
+      "original_bytes": 2329690,
+      "optimized_bytes": 35182
+    },
+    {
+      "original": "dist/image/illustrations/marketplace.png",
+      "optimized": "dist/image/illustrations/marketplace.webp",
+      "original_bytes": 2219499,
+      "optimized_bytes": 23232
+    },
+    {
+      "original": "dist/image/illustrations/branding.png",
+      "optimized": "dist/image/illustrations/branding.webp",
+      "original_bytes": 2403767,
+      "optimized_bytes": 39118
+    },
+    {
+      "original": "dist/image/illustrations/listing.png",
+      "optimized": "dist/image/illustrations/listing.webp",
+      "original_bytes": 2215311,
+      "optimized_bytes": 29468
+    },
+    {
+      "original": "dist/image/illustrations/organic.png",
+      "optimized": "dist/image/illustrations/organic.webp",
+      "original_bytes": 2301637,
+      "optimized_bytes": 39376
+    },
+    {
+      "original": "public/image/illustrations/shopify.png",
+      "optimized": "public/image/illustrations/shopify.webp",
+      "original_bytes": 2264139,
+      "optimized_bytes": 33806
+    },
+    {
+      "original": "public/image/illustrations/google.png",
+      "optimized": "public/image/illustrations/google.webp",
+      "original_bytes": 2329690,
+      "optimized_bytes": 35182
+    },
+    {
+      "original": "public/image/illustrations/marketplace.png",
+      "optimized": "public/image/illustrations/marketplace.webp",
+      "original_bytes": 2219499,
+      "optimized_bytes": 23232
+    },
+    {
+      "original": "public/image/illustrations/branding.png",
+      "optimized": "public/image/illustrations/branding.webp",
+      "original_bytes": 2403767,
+      "optimized_bytes": 39118
+    },
+    {
+      "original": "public/image/illustrations/listing.png",
+      "optimized": "public/image/illustrations/listing.webp",
+      "original_bytes": 2215311,
+      "optimized_bytes": 29468
+    },
+    {
+      "original": "public/image/illustrations/organic.png",
+      "optimized": "public/image/illustrations/organic.webp",
+      "original_bytes": 2301637,
+      "optimized_bytes": 39376
+    }
+  ]
+}
