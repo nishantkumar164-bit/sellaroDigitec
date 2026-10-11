@@ -134,16 +134,54 @@ const BlogPost = () => {
 
   const renderBlock = (block, index) => {
     switch (block.type) {
-      case 'paragraph':
-        return (
-          <p
-            key={index}
-            className="mb-6 text-base leading-8 text-slate-700 last:mb-0"
-          >
-            {block.text}
-          </p>
-        );
+     case 'paragraph':
+  return (
+    <p
+      key={index}
+      className="mb-6 text-base leading-8 text-slate-700 last:mb-0"
+    >
+      {block.content
+        ? block.content.map((item, itemIndex) => {
+            if (item.type === 'link') {
+              const className =
+                'font-medium text-orange-600 underline decoration-orange-300 underline-offset-4 hover:text-orange-700';
 
+              // Internal links use React Router.
+              if (item.url.startsWith('/')) {
+                return (
+                  <Link
+                    key={itemIndex}
+                    to={item.url}
+                    className={className}
+                  >
+                    {item.text}
+                  </Link>
+                );
+              }
+
+              // External links use a normal anchor.
+              return (
+                <a
+                  key={itemIndex}
+                  href={item.url}
+                  className={className}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {item.text}
+                </a>
+              );
+            }
+
+            return (
+              <React.Fragment key={itemIndex}>
+                {item.text}
+              </React.Fragment>
+            );
+          })
+        : block.text}
+    </p>
+  );
       case 'heading': {
         const headingClass =
           'mb-4 mt-10 font-bold leading-snug text-slate-900';
