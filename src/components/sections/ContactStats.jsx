@@ -11,11 +11,11 @@ const stats = [
         icon: Briefcase,
         value: '500+',
         title: 'Brands Scaled',
-        subtitle: 'Across 15+ countries',
+        subtitle: 'Across 6 countries',
     },
     {
         icon: TrendingUp,
-        value: '₹50Cr+',
+        value: '₹5Cr+',
         title: 'Revenue Managed',
         subtitle: "For our client's stores",
     },

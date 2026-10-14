@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 const marketplaces = [
-    "/image/amazon_logo.png",
+    "/image/jio-mart-logo.png",
     "/image/shopify_logo.webp",
     "/image/walmart_logo.webp",
     "/image/etsy_logo.png",

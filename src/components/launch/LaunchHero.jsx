@@ -281,7 +281,7 @@ absolute
 "
                             >
                                 <img
-                                    src="/image/amazon_logo.png"
+                                    src="/image/flipkart_logo.webp"
                                     alt="Amazon"
                                     className="w-12"
                                 />

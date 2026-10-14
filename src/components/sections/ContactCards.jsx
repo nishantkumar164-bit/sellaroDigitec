@@ -26,7 +26,7 @@ const cards = [
     {
         icon: MapPin,
         title: 'Global Operations',
-        primary: 'India • UAE • UK • USA',
+        primary: 'India • UAE • UK • USA • CANADA',
         secondary: 'Supporting brands worldwide',
         bg: 'bg-blue-50',
         color: 'text-blue-500',
@@ -34,7 +34,7 @@ const cards = [
     {
         icon: Clock3,
         title: 'Availability',
-        primary: 'Mon – Sat · 9 AM – 7 PM',
+        primary: 'Mon – Sat · 10 AM – 6 PM',
         secondary: "We're here to help",
         bg: 'bg-violet-50',
         color: 'text-violet-500',

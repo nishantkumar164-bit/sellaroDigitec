@@ -17,7 +17,7 @@ const features = [
         icon: ShieldCheck,
         title: "Global Compliance",
         description:
-            "Guidance for GST, VAT, EIN & marketplace requirements.",
+            "Guidance for essential docuementation for marketplace requirements.",
         color: "text-blue-500",
         glow: "hover:shadow-blue-100",
     },
