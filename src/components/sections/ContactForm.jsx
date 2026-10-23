@@ -8,7 +8,9 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    phone: '',
     company: '',
+    services: [],
     marketplace: 'Amz India',
     spend: '₹1,00,000 - ₹5,00,000',
     message: ''
@@ -21,6 +23,16 @@ const ContactForm = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleServiceChange = (e) => {
+    const { value, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      services: checked
+        ? [...prev.services, value]
+        : prev.services.filter((service) => service !== value)
+    }));
   };
 
   const handleSubmit = async (e) => {
@@ -42,7 +54,9 @@ const ContactForm = () => {
       const payload = {
         name: formData.name.trim(),
         email: formData.email.trim(),
+        phone: formData.phone.trim(),
         company_name: formData.company.trim(),
+        services: formData.services,
         target_platform: formData.marketplace,
         monthly_sales: formData.spend,
         description: formData.message.trim(),
@@ -76,7 +90,9 @@ const ContactForm = () => {
       setFormData({
         name: '',
         email: '',
+        phone: '',
         company: '',
+        services: [],
         marketplace: 'Amz India',
         spend: '₹1,00,000 - ₹5,00,000',
         message: ''
@@ -113,7 +129,7 @@ const ContactForm = () => {
               Ready to <span className="text-brand-gradient">Grow Across </span>Amz, Shopify & Global Marketplaces?
             </h2>
             <p className="text-slate-650 text-sm sm:text-base leading-relaxed mb-8">
-              Book a free ecommerce growth audit with our marketplace specialists. We'll analyze your listings, advertising performance, storefront experience, and growth opportunities across Amz, Walmart, Flipkart, Etsy, eBay, Shopify, and more.
+              Tell us what your business needs. Our team can help with marketplace management, advertising, ecommerce websites, SEO, and creative solutions.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -239,34 +255,85 @@ const ContactForm = () => {
                         onChange={handleInputChange}
                         className="bg-white border border-slate-200 text-slate-800 rounded-lg py-3 px-4 text-sm focus:outline-none focus:border-primary-500 transition shadow-sm"
                       >
-                        <option value="Amz India">Amz India (IN)</option>
-                        <option value="Amz Global">Amz Global (US/CA/UK)</option>
-                        <option value="Flipkart">Flipkart Storefront</option>
+                        <option value="Amz India">Amazon India</option>
+                        <option value="Amz Global">Amazon Global (US/CA/UK)</option>
+                        <option value="Flipkart">Flipkart</option>
+                        <option value="Ebay">eBay</option>
+                        <option value="Etsy">Etsy</option>
                         <option value="Shopify D2C">Shopify / Custom D2C</option>
-                        <option value="Multi-Channel">Multi-Channel Scaling</option>
-                        <option value="Multi-Channel">Social Media Ads</option>
-                        <option value="Multi-Channel">Ecommerce Website Creation</option>
-                        <option value="Multi-Channel">Ads Campagin Managemet</option>
-                        <option value="Multi-Channel">Graphics and Video solutions</option>
+                        <option value="Other">Other / Not sure yet</option>
                       </select>
                     </div>
                   </div>
 
-                  <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-sales" className="text-xs text-slate-500 font-bold uppercase">Phone Number</label>
-                    <select
-                      id="contact-sales"
-                      name="spend"
-                      value={formData.spend}
-                      onChange={handleInputChange}
-                      className="bg-white border border-slate-200 text-slate-800 rounded-lg py-3.5 px-4 text-sm focus:outline-none focus:border-primary-500 transition shadow-sm"
-                    >
-                      <option value="< ₹1,00,000">Less than ₹1,00,000 (or $1,500) / mo</option>
-                      <option value="₹1,00,000 - ₹5,00,000">₹1,00,000 - ₹5,00,000 / mo</option>
-                      <option value="₹5,00,000 - ₹20,00,000">₹5,00,000 - ₹20,05,000 / mo</option>
-                      <option value="₹20,00,000+">₹20,00,000+ (or $25,000+) / mo</option>
-                    </select>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="flex flex-col gap-1.5">
+                      <label htmlFor="contact-phone" className="text-xs text-slate-500 font-bold uppercase">
+                        Phone / WhatsApp <span className="text-slate-400 normal-case">(optional)</span>
+                      </label>
+                      <input
+                        id="contact-phone"
+                        type="tel"
+                        name="phone"
+                        autoComplete="tel"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        placeholder="+91 98765 43210"
+                        className="bg-white border border-slate-200 text-slate-800 placeholder-slate-400 rounded-lg py-3.5 px-4 text-sm focus:outline-none focus:border-primary-500 transition shadow-sm"
+                      />
+                    </div>
+
+                    <div className="flex flex-col gap-1.5">
+                      <label htmlFor="contact-sales" className="text-xs text-slate-500 font-bold uppercase">
+                        Current Monthly Store Sales
+                      </label>
+                      <select
+                        id="contact-sales"
+                        name="spend"
+                        value={formData.spend}
+                        onChange={handleInputChange}
+                        className="bg-white border border-slate-200 text-slate-800 rounded-lg py-3.5 px-4 text-sm focus:outline-none focus:border-primary-500 transition shadow-sm"
+                      >
+                        <option value="< ₹1,00,000">Less than ₹1,00,000 / month</option>
+                        <option value="₹1,00,000 - ₹5,00,000">₹1,00,000 - ₹5,00,000 / month</option>
+                        <option value="₹5,00,000 - ₹20,00,000">₹5,00,000 - ₹20,00,000 / month</option>
+                        <option value="₹20,00,000+">₹20,00,000+ / month</option>
+                        <option value="Not applicable">Not applicable</option>
+                      </select>
+                    </div>
                   </div>
+
+                  <fieldset className="flex flex-col gap-3">
+                    <legend className="text-xs text-slate-500 font-bold uppercase">
+                      Which services do you need? <span className="text-slate-400 normal-case">(select all that apply)</span>
+                    </legend>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {[
+                        'Marketplace Account Management',
+                        'Marketplace Advertising & PPC',
+                        'Social Media Ads',
+                        'Ecommerce Website Development',
+                        'SEO & Digital Marketing',
+                        'Graphics & Video Solutions',
+                        'Other / Not Sure Yet'
+                      ].map((service) => (
+                        <label
+                          key={service}
+                          className="flex items-start gap-2.5 rounded-lg border border-slate-200 bg-white px-3 py-3 text-sm text-slate-700 cursor-pointer hover:border-primary-400 transition"
+                        >
+                          <input
+                            type="checkbox"
+                            name="services"
+                            value={service}
+                            checked={formData.services.includes(service)}
+                            onChange={handleServiceChange}
+                            className="mt-0.5 h-4 w-4 accent-blue-600"
+                          />
+                          <span>{service}</span>
+                        </label>
+                      ))}
+                    </div>
+                  </fieldset>
 
                   <div className="flex flex-col gap-1.5">
                     <label htmlFor="contact-message" className="text-xs text-slate-500 font-bold uppercase">Scope & Growth Challenges</label>
