@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, ShieldCheck, Database, Mail, TerminalSquare } from 'lucide-react';
+import { Send, CheckCircle2, LoaderCircle } from 'lucide-react';
 import Button from '../common/Button';
 import Card from '../common/Card';
 
@@ -15,6 +15,7 @@ const ContactForm = () => {
   });
 
   const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+  const [errorMessage, setErrorMessage] = useState('');
 
 
   const handleInputChange = (e) => {
@@ -25,60 +26,68 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email) {
+    if (!formData.name.trim() || !formData.email.trim()) {
       return;
     }
 
+    setErrorMessage('');
+
     try {
-      setStatus("submitting");
+      if (!API_URL || API_URL.includes('undefined')) {
+        throw new Error('The contact form is not configured correctly. Please contact us directly.');
+      }
+
+      setStatus('submitting');
 
       const payload = {
-        name: formData.name,
-        email: formData.email,
-        company_name: formData.company,
+        name: formData.name.trim(),
+        email: formData.email.trim(),
+        company_name: formData.company.trim(),
         target_platform: formData.marketplace,
         monthly_sales: formData.spend,
-        description: formData.message,
-        source: "Contact Page"
+        description: formData.message.trim(),
+        source: 'Contact Page'
       };
 
-      console.log("API URL:", API_URL);
-      console.log("Payload:", payload);
-      if (!API_URL || API_URL.includes("undefined")) {
-  throw new Error("Contact API URL is missing from the production build.");
-}
-
       const response = await fetch(API_URL, {
-        method: "POST",
+        method: 'POST',
         headers: {
-          "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(payload)
       });
 
-      console.log("Status:", response.status);
-
-      const responseText = await response.text();
-      console.log("Response:", responseText);
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${responseText}`);
+      // Lambda's response body should contain { success: true } only after S3 saves the lead.
+      let result;
+      try {
+        result = await response.json();
+      } catch {
+        throw new Error('The server returned an invalid response. Please try again.');
       }
 
+      if (!response.ok || result?.success !== true) {
+        throw new Error(
+          result?.message || result?.error ||
+          `We could not confirm that your enquiry was saved (HTTP ${response.status}). Please try again.`
+        );
+      }
+
+      // Show success only when both HTTP status and Lambda's success flag are valid.
       setFormData({
-        name: "",
-        email: "",
-        company: "",
-        marketplace: "Amz India",
-        spend: "₹1,00,000 - ₹5,00,000",
-        message: ""
+        name: '',
+        email: '',
+        company: '',
+        marketplace: 'Amz India',
+        spend: '₹1,00,000 - ₹5,00,000',
+        message: ''
       });
-
-      setStatus("success");
-
+      setStatus('success');
     } catch (error) {
-      console.error("FULL ERROR:", error);
-      setStatus("error");
+      console.error('Contact form submission failed:', error);
+      setErrorMessage(
+        error?.message || 'Something went wrong while submitting your enquiry. Please try again.'
+      );
+      setStatus('error');
     }
   };
   const API_URL = import.meta.env.VITE_CONTACT_API;
@@ -276,34 +285,14 @@ const ContactForm = () => {
               )}
 
               {status === 'submitting' && (
-                <div className="flex flex-col gap-6 py-6 justify-center">
-                  <div className="flex items-center gap-3 font-heading text-lg font-bold text-slate-900 mb-2 uppercase tracking-wide">
-                    <TerminalSquare className="h-6 w-6 text-primary-600 animate-pulse" />
-                    <span>SP-API AUDIT PROCESS LOGS</span>
-                  </div>
-
-                  {/* Simulated console logs */}
-                  <div className="bg-black/60 rounded-xl border border-slate-900 p-5 font-mono text-[11px] leading-relaxed text-slate-400 flex flex-col gap-2 min-h-60 overflow-y-auto custom-scrollbar shadow-inner">
-                    {logs.map((log, idx) => (
-                      <p
-                        key={idx}
-                        className={
-                          log.startsWith('>> [')
-                            ? 'text-accent-500'
-                            : log.startsWith('>>')
-                              ? 'text-primary-400 animate-pulse'
-                              : 'text-slate-500'
-                        }
-                      >
-                        {log}
-                      </p>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center gap-3 justify-center text-xs text-slate-650 font-semibold">
-                    <div className="w-3 h-3 rounded-full bg-accent-600 animate-ping" />
-                    <span>Executing serverless catalog scanning rules...</span>
-                  </div>
+                <div className="flex flex-col items-center justify-center text-center py-14" role="status" aria-live="polite">
+                  <LoaderCircle className="h-12 w-12 text-primary-600 animate-spin mb-5" />
+                  <h3 className="font-heading text-xl font-bold text-slate-900 mb-2">
+                    Submitting Your Enquiry
+                  </h3>
+                  <p className="text-slate-600 text-sm leading-relaxed max-w-sm">
+                    Please wait while we securely save your enquiry. This may take a few seconds.
+                  </p>
                 </div>
               )}
 
@@ -333,14 +322,16 @@ const ContactForm = () => {
                   </h3>
 
                   <p className="mt-3 text-slate-600">
-                    Something went wrong while submitting your request.
-                    Please try again.
+                    {errorMessage || 'We could not confirm that your enquiry was saved. Please try again.'}
                   </p>
 
                   <Button
                     variant="primary"
                     className="mt-6"
-                    onClick={() => setStatus("idle")}
+                    onClick={() => {
+                      setErrorMessage('');
+                      setStatus('idle');
+                    }}
                   >
                     Try Again
                   </Button>
