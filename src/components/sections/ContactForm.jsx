@@ -44,6 +44,9 @@ const ContactForm = () => {
 
       console.log("API URL:", API_URL);
       console.log("Payload:", payload);
+      if (!API_URL || API_URL.includes("undefined")) {
+  throw new Error("Contact API URL is missing from the production build.");
+}
 
       const response = await fetch(API_URL, {
         method: "POST",
