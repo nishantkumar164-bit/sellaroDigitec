@@ -244,12 +244,16 @@ const ContactForm = () => {
                         <option value="Flipkart">Flipkart Storefront</option>
                         <option value="Shopify D2C">Shopify / Custom D2C</option>
                         <option value="Multi-Channel">Multi-Channel Scaling</option>
+                        <option value="Multi-Channel">Social Media Ads</option>
+                        <option value="Multi-Channel">Ecommerce Website Creation</option>
+                        <option value="Multi-Channel">Ads Campagin Managemet</option>
+                        <option value="Multi-Channel">Graphics and Video solutions</option>
                       </select>
                     </div>
                   </div>
 
                   <div className="flex flex-col gap-1.5">
-                    <label htmlFor="contact-sales" className="text-xs text-slate-500 font-bold uppercase">Current Monthly Store Sales</label>
+                    <label htmlFor="contact-sales" className="text-xs text-slate-500 font-bold uppercase">Phone Number</label>
                     <select
                       id="contact-sales"
                       name="spend"
