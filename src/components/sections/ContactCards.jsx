@@ -10,7 +10,7 @@ const cards = [
     {
         icon: Mail,
         title: 'Email Us',
-        primary: 'growth@sellarodigitec.com',
+        primary: 'sellarodigitecsolutions@gmail.com',
         secondary: 'Response within 24 hours',
         bg: 'bg-orange-50',
         color: 'text-orange-500',
