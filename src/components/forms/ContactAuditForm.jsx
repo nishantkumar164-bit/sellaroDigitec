@@ -186,7 +186,7 @@ const ContactAuditForm = () => {
                                 htmlFor="audit-phone"
                                 className="block text-xs font-bold uppercase text-slate-500 mb-2"
                             >
-                                Phone / WhatsApp <span className="font-normal normal-case">(optional)</span>
+                                Phone / WhatsApp <span className="font-normal normal-case"></span>
                             </label>
                             <input
                                 id="audit-phone"

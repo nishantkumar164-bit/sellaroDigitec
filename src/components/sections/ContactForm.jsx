@@ -38,7 +38,9 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!formData.name.trim() || !formData.email.trim()) {
+    if (!formData.name.trim() || !formData.phone.trim()) {
+      setErrorMessage('Please enter your name and phone number to submit your enquiry.');
+      setStatus('error');
       return;
     }
 
@@ -219,12 +221,11 @@ const ContactForm = () => {
                       />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-email" className="text-xs text-slate-500 font-bold uppercase">Corporate Email</label>
+                      <label htmlFor="contact-email" className="text-xs text-slate-500 font-bold uppercase">Corporate Email <span className="normal-case font-normal"></span></label>
                       <input
                         id="contact-email"
                         type="email"
                         name="email"
-                        required
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="j.doe@company.com"
@@ -269,13 +270,14 @@ const ContactForm = () => {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div className="flex flex-col gap-1.5">
                       <label htmlFor="contact-phone" className="text-xs text-slate-500 font-bold uppercase">
-                        Phone / WhatsApp <span className="text-slate-400 normal-case">(optional)</span>
+                        Phone / WhatsApp <span className="text-red-500 normal-case">*</span>
                       </label>
                       <input
                         id="contact-phone"
                         type="tel"
                         name="phone"
                         autoComplete="tel"
+                        required
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="+91 98765 43210"
@@ -283,24 +285,7 @@ const ContactForm = () => {
                       />
                     </div>
 
-                    <div className="flex flex-col gap-1.5">
-                      <label htmlFor="contact-sales" className="text-xs text-slate-500 font-bold uppercase">
-                        Current Monthly Store Sales
-                      </label>
-                      <select
-                        id="contact-sales"
-                        name="spend"
-                        value={formData.spend}
-                        onChange={handleInputChange}
-                        className="bg-white border border-slate-200 text-slate-800 rounded-lg py-3.5 px-4 text-sm focus:outline-none focus:border-primary-500 transition shadow-sm"
-                      >
-                        <option value="< ₹1,00,000">Less than ₹1,00,000 / month</option>
-                        <option value="₹1,00,000 - ₹5,00,000">₹1,00,000 - ₹5,00,000 / month</option>
-                        <option value="₹5,00,000 - ₹20,00,000">₹5,00,000 - ₹20,00,000 / month</option>
-                        <option value="₹20,00,000+">₹20,00,000+ / month</option>
-                        <option value="Not applicable">Not applicable</option>
-                      </select>
-                    </div>
+                    
                   </div>
 
                   <fieldset className="flex flex-col gap-3">
