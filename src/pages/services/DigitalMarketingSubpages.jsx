@@ -21,6 +21,12 @@ import SEO from "../../components/common/SEO";
 
 
 export const GoogleSearchAds = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Google Search Ads Management | Sellaro Digitec"
+  description="Grow your business with Google Search Ads managed by Sellaro Digitec. Reach relevant customers, optimize ad spend and generate quality leads."
+  canonical="/services/google-search-ads"
+/>
   <DigitalMarketingTemplate
     onOpenForm={onOpenForm}
 
@@ -169,9 +175,16 @@ export const GoogleSearchAds = ({ onOpenForm }) => (
 
     faqs={googleSearchFaqs}
   />
+  </>
 );
 
 export const GoogleDisplayAds = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Google Display Ads Management | Sellaro Digitec"
+  description="Promote your business with Google Display Ads by Sellaro Digitec. Reach relevant audiences, build brand awareness and optimize your advertising spend."
+  canonical="/services/google-display-ads"
+/>
   <DigitalMarketingTemplate
     onOpenForm={onOpenForm}
 
@@ -320,9 +333,16 @@ export const GoogleDisplayAds = ({ onOpenForm }) => (
 
     faqs={googleDisplayFaqs}
   />
+  </>
 );
 
 export const GoogleProductsListing = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Google Product Listing Services | Sellaro Digitec"
+  description="Improve your product visibility on Google with Sellaro Digitec. Get product feed setup, Merchant Center support and listing optimization for ecommerce growth."
+  canonical="/services/google-products-listing"
+/>
   <DigitalMarketingTemplate
     onOpenForm={onOpenForm}
 
@@ -435,9 +455,16 @@ export const GoogleProductsListing = ({ onOpenForm }) => (
       "Merchant Center Compliance"
     ]}
   />
+  </>
 );
 
 export const GoogleShoppingAds = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Google Shopping Ads Management | Sellaro Digitec"
+  description="Boost ecommerce product visibility with Google Shopping Ads by Sellaro Digitec. Get campaign setup, product feed optimization and ad performance management."
+  canonical="/services/google-shopping-ads"
+/>
   <DigitalMarketingTemplate
     onOpenForm={onOpenForm}
 
@@ -550,4 +577,5 @@ export const GoogleShoppingAds = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );

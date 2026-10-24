@@ -35,6 +35,11 @@ import SEO from "../../components/common/SEO";
 
 
 export const MetaAds = ({ onOpenForm }) => (
+    <><SEO
+  title="Meta Ads Management Services | Sellaro Digitec"
+  description="Grow your business with Meta Ads managed by Sellaro Digitec. Reach targeted audiences on Facebook and Instagram, optimize ad spend and generate leads."
+  canonical="/services/meta-ads"
+/>
     <SocialMediaTemplate
         onOpenForm={onOpenForm}
 
@@ -182,9 +187,16 @@ export const MetaAds = ({ onOpenForm }) => (
 
         faqs={metaAdsFaqs}
     />
+    </>
 );
 
 export const ContentDesign = ({ onOpenForm }) => (
+    <>
+    <SEO
+  title="Content Design Services | Sellaro Digitec"
+  description="Make your brand stand out with content design by Sellaro Digitec. Get engaging social media creatives, branded graphics and visual content for your business."
+  canonical="/services/content-design"
+/>
     <SocialMediaTemplate
         onOpenForm={onOpenForm}
 
@@ -333,9 +345,16 @@ export const ContentDesign = ({ onOpenForm }) => (
 
         faqs={contentDesignFaqs}
     />
+    </>
 );
 
 export const InfluencerMarketing = ({ onOpenForm }) => (
+    <>
+    <SEO
+  title="Influencer Marketing Services | Sellaro Digitec"
+  description="Grow your brand with influencer marketing by Sellaro Digitec. Connect with relevant creators, promote your products and build audience engagement."
+  canonical="/services/influencer-marketing"
+/>
     <SocialMediaTemplate
         onOpenForm={onOpenForm}
 
@@ -483,10 +502,17 @@ export const InfluencerMarketing = ({ onOpenForm }) => (
 
         faqs={influencerMarketingFaqs}
     />
+    </>
 );
 
 
 export const VideoEditing = ({ onOpenForm }) => (
+    <>
+    <SEO
+  title="Video Editing Services | Sellaro Digitec"
+  description="Enhance your brand with professional video editing by Sellaro Digitec. Get engaging social media videos, promotional edits, reels and business video content."
+  canonical="/services/video-editing"
+/>
     <SocialMediaTemplate
         onOpenForm={onOpenForm}
 
@@ -634,4 +660,5 @@ export const VideoEditing = ({ onOpenForm }) => (
 
         faqs={videoEditingFaqs}
     />
+    </>
 );
