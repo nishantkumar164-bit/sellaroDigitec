@@ -27,6 +27,8 @@ import {
     Clapperboard,
     MonitorPlay
 } from 'lucide-react';
+import SEO from "../../components/common/SEO";
+
 
 
 

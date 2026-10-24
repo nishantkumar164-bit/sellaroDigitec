@@ -21,10 +21,16 @@ import {
 
 import WebsiteTemplate from '../../components/templates/WebsiteTemplate';
 import { shopifyFaqs, wordpressFaqs, customWebsiteFaqs, redesignFaqs, productCatalogFaqs } from '../../data/FAQ/websiteFaqs';
-
+import SEO from "../../components/common/SEO";
 
 
 export const ShopifyDevelopment = ({ onOpenForm }) => (
+  <>
+    <SEO
+      title="Shopify Store Development Services | Sellaro Digitec"
+      description="Launch a high-performing Shopify store with Sellaro Digitec. Get custom Shopify design, store setup, product catalog management and conversion-focused ecommerce development."
+      canonical="/services/shopify"
+    />
     <WebsiteTemplate
         onOpenForm={onOpenForm}
 
@@ -164,9 +170,16 @@ export const ShopifyDevelopment = ({ onOpenForm }) => (
 
         faqs={shopifyFaqs}
     />
+</>
 );
 
 export const WordPressDevelopment = ({ onOpenForm }) => (
+    <>
+    <SEO
+      title="WordPress Website Development Services | Sellaro"
+      description="Build a professional WordPress website with Sellaro Digitec. Get custom design, responsive development, SEO-friendly structure and performance optimization to grow your business online."
+      canonical="/services/wordpress"
+    />
     <WebsiteTemplate
         onOpenForm={onOpenForm}
 
@@ -306,9 +319,16 @@ export const WordPressDevelopment = ({ onOpenForm }) => (
 
         faqs={wordpressFaqs}
     />
+    </>
 );
 
 export const CustomWebsiteDevelopment = ({ onOpenForm }) => (
+    <>
+    <SEO
+      title="Custom Website Development Services | Sellaro"
+      description="Get a custom website built around your business goals with Sellaro Digitec. We develop responsive websites, web applications and tailored digital solutions."
+      canonical="/services/custom-website"
+    />
     <WebsiteTemplate
         onOpenForm={onOpenForm}
 
@@ -449,9 +469,16 @@ export const CustomWebsiteDevelopment = ({ onOpenForm }) => (
 
         faqs={customWebsiteFaqs}
     />
+    </>
 );
 
 export const WebsiteRedesign = ({ onOpenForm }) => (
+    <>
+    <SEO
+      title="Website Redesign Services | Modernize Your Website"
+      description="Transform your outdated website with Sellaro Digitec. Get modern web design, mobile optimization, improved performance and a better user experience that supports business growth."
+      canonical="/services/website-redesign"
+    />
     <WebsiteTemplate
         onOpenForm={onOpenForm}
 
@@ -592,9 +619,16 @@ export const WebsiteRedesign = ({ onOpenForm }) => (
 
         faqs={redesignFaqs}
     />
+    </>
 );
 
 export const ProductCatalogWebsite = ({ onOpenForm }) => (
+    <>
+    <SEO
+      title="Product Catalogue Design Services | Sellaro Digitec"
+      description="Showcase your products with professional catalogue design by Sellaro Digitec. Get attractive product layouts, organized listings and business-ready catalogues."
+      canonical="/services/product-catalouge-design"
+    />
     <WebsiteTemplate
         onOpenForm={onOpenForm}
 
@@ -742,4 +776,5 @@ export const ProductCatalogWebsite = ({ onOpenForm }) => (
 
         faqs={productCatalogFaqs}
     />
+    </>
 );

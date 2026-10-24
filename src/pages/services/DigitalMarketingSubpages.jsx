@@ -16,6 +16,8 @@ import {
   TrendingUp,
   CheckCircle
 } from 'lucide-react';
+import SEO from "../../components/common/SEO";
+
 
 
 export const GoogleSearchAds = ({ onOpenForm }) => (

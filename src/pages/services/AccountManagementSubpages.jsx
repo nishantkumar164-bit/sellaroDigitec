@@ -12,10 +12,18 @@ import {
   Award,
   BarChart3
 } from 'lucide-react';
+import SEO from "../../components/common/SEO";
+
 
 
 
 export const AmazonAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Amazon Account Management Services | Sellaro Digitec"
+  description="Grow your Amazon business with Sellaro Digitec. Get expert seller account management, product listing optimization, catalog management and marketplace support."
+  canonical="/services/amazon-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -155,9 +163,16 @@ export const AmazonAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );
 
 export const FlipkartAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Flipkart Account Management Services | Sellaro Digitec"
+  description="Grow your Flipkart business with Sellaro Digitec. Get seller account management, product listing optimization, catalogue management and marketplace support."
+  canonical="/services/flipkart-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -304,9 +319,16 @@ export const FlipkartAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );
 
 export const MeeshoAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Meesho Account Management Services | Sellaro Digitec"
+  description="Grow your Meesho business with Sellaro Digitec. Get seller account management, product listing optimization, catalogue management and marketplace support."
+  canonical="/services/meesho-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -452,8 +474,15 @@ export const MeeshoAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );
 export const JoimartAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="JioMart Account Management Services | Sellaro Digitec"
+  description="Grow your JioMart business with Sellaro Digitec. Get seller account management, product listing optimization, catalogue management and marketplace support."
+  canonical="/services/jiomart-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -599,9 +628,16 @@ export const JoimartAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );
 
 export const EbayAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="eBay Account Management Services | Sellaro Digitec"
+  description="Grow your eBay business with Sellaro Digitec. Get seller account management, product listing optimization, catalogue management and marketplace support."
+  canonical="/services/ebay-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -747,9 +783,16 @@ export const EbayAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );
 
 export const EtsyAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Etsy Account Management Services | Sellaro Digitec"
+  description="Grow your Etsy shop with Sellaro Digitec. Get expert seller account management, product listing optimization, shop setup and catalogue management support."
+  canonical="/services/etsy-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -895,9 +938,16 @@ export const EtsyAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );
 
 export const WalmartAccount = ({ onOpenForm }) => (
+  <>
+  <SEO
+  title="Walmart Account Management Services | Sellaro Digitec"
+  description="Grow your Walmart Marketplace business with Sellaro Digitec. Get seller account management, product listing optimization, catalogue management and marketplace support."
+  canonical="/services/walmart-account-management"
+/>
   <ServicePageTemplate
     onOpenForm={onOpenForm}
     badge="Marketplace Management"
@@ -1043,4 +1093,5 @@ export const WalmartAccount = ({ onOpenForm }) => (
       }
     ]}
   />
+  </>
 );

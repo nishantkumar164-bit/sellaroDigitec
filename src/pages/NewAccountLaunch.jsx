@@ -6,10 +6,16 @@ import GlobalPresence from "../components/launch/GlobalPresence";
 import LaunchReadiness from "../components/launch/LaunchReadiness";
 import LaunchIncluded from "../components/launch/LaunchIncluded";
 import ContactCTA from "../components/sections/ContactCTA";
+import SEO from "../components/common/SEO";
 
 export default function NewAccountLaunch({ onOpenForm }) {
   return (
     <>
+    <SEO
+        title="New Seller Account Launch Services | Sellaro Digitec"
+        description="Launch your marketplace business with Sellaro Digitec. Get seller account setup guidance, product listing creation, catalogue setup and launch support."
+        canonical="/launch"
+      />
       <LaunchHero onOpenForm={onOpenForm} />
 
       <MarketplaceSetupCards

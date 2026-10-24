@@ -12,7 +12,6 @@ const ContactForm = () => {
     company: '',
     services: [],
     marketplace: 'Amz India',
-    spend: '₹1,00,000 - ₹5,00,000',
     message: ''
   });
 
@@ -60,7 +59,6 @@ const ContactForm = () => {
         company_name: formData.company.trim(),
         services: formData.services,
         target_platform: formData.marketplace,
-        monthly_sales: formData.spend,
         description: formData.message.trim(),
         source: 'Contact Page'
       };
@@ -96,7 +94,6 @@ const ContactForm = () => {
         company: '',
         services: [],
         marketplace: 'Amz India',
-        spend: '₹1,00,000 - ₹5,00,000',
         message: ''
       });
       setStatus('success');
@@ -366,9 +363,9 @@ const ContactForm = () => {
                     Thank you for contacting Sellaro Digitec. Our marketplace growth team has received your request and will review your requirements shortly.
                   </p>
 
-                  <Button variant="primary" size="md" onClick={() => setStatus('idle')}>
+                  {/* <Button variant="primary" size="md" onClick={() => setStatus('idle')}>
                     Back to Form
-                  </Button>
+                  </Button> */}
                 </div>
               )}
               {status === "error" && (
