@@ -167,7 +167,7 @@ const Footer = () => {
             </h2>
 
             <p className="text-sm leading-relaxed text-slate-600">
-              Need help launching on Amazon, Walmart, Shopify, or other
+              Need help launching on Amz, Walmart, Shopify, or other
               marketplaces? Our experts are ready to assist.
             </p>
           </div>

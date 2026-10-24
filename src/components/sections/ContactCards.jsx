@@ -65,21 +65,23 @@ const ContactCards = () => {
                             <div
                                 key={index}
                                 className="
-                  group
-                  bg-white/80
-                  backdrop-blur-sm
-                  rounded-3xl
-                  border
-                  border-slate-200
-                  p-6
-                  shadow-sm
-                  hover:shadow-xl
-                  hover:shadow-orange-100
-                  hover:border-orange-200
-                  hover:-translate-y-2
-                  transition-all
-                  duration-500
-                "
+  group
+  min-w-0
+  h-full
+  bg-white/80
+  backdrop-blur-sm
+  rounded-3xl
+  border
+  border-slate-200
+  p-6
+  shadow-sm
+  hover:shadow-xl
+  hover:shadow-orange-100
+  hover:border-orange-200
+  hover:-translate-y-2
+  transition-all
+  duration-500
+"
                             >
                                 <div
                                     className={`
@@ -102,9 +104,9 @@ const ContactCards = () => {
                                     {card.title}
                                 </h3>
 
-                                <p className="mt-3 font-semibold text-slate-800">
-                                    {card.primary}
-                                </p>
+                                <p className="mt-3 min-w-0 font-semibold text-slate-800 [overflow-wrap:anywhere]">
+    {card.primary}
+</p>
 
                                 <p className="mt-2 text-sm text-slate-500">
                                     {card.secondary}
