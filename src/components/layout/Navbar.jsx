@@ -304,7 +304,7 @@ const Navbar = ({ currency, onCurrencyToggle }) => {
           >
             <Link to="/free-audit">
               <Button variant="primary" size="sm">
-                Get Free Audit
+                Get Free Webstore Audit
               </Button>
             </Link>
           </div>
