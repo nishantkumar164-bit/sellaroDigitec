@@ -41,6 +41,7 @@ import {
 } from './pages/services/DigitalMarketingSubpages';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
+import FreeAudit from "./pages/FreeAudit";
 
 
 
@@ -175,56 +176,57 @@ const App = () => {
             <Route path="/terms-conditions" element={<TermsAndConditions />} />
             <Route path="/cache-policy" element={<CachePolicy />} />
             <Route
-  path="/uk"
-  element={
-    <CountryPage
-      country="uk"
-      onOpenForm={handleOpenContactModal}
-    />
-  }
-/>
+              path="/uk"
+              element={
+                <CountryPage
+                  country="uk"
+                  onOpenForm={handleOpenContactModal}
+                />
+              }
+            />
 
             <Route
-  path="/usa"
-  element={
-    <CountryPage
-      country="usa"
-      onOpenForm={handleOpenContactModal}
-    />
-  }
-/>
+              path="/usa"
+              element={
+                <CountryPage
+                  country="usa"
+                  onOpenForm={handleOpenContactModal}
+                />
+              }
+            />
 
-<Route
-  path="/uae"
-  element={
-    <CountryPage
-      country="uae"
-      onOpenForm={handleOpenContactModal}
-    />
-  }
-/>
+          <Route
+            path="/uae"
+            element={
+              <CountryPage
+                country="uae"
+                onOpenForm={handleOpenContactModal}
+              />
+            }
+          />
 
-<Route
-  path="/canada"
-  element={
-    <CountryPage
-      country="canada"
-      onOpenForm={handleOpenContactModal}
-    />
-  }
-/>
+        <Route
+          path="/canada"
+          element={
+            <CountryPage
+              country="canada"
+              onOpenForm={handleOpenContactModal}
+            />
+          }
+        />
 
-<Route
-  path="/australia"
-  element={
-    <CountryPage
-      country="australia"
-      onOpenForm={handleOpenContactModal}
-    />
-  }
-/>
-<Route path="/blog" element={<Blog />} />
-<Route path="/blog/:slug" element={<BlogPost />} />
+        <Route
+          path="/australia"
+          element={
+            <CountryPage
+              country="australia"
+              onOpenForm={handleOpenContactModal}
+            />
+          }
+        />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/blog/:slug" element={<BlogPost />} />
+        <Route path="/free-audit" element={<FreeAudit />} />
 
           </Routes>
         </main>

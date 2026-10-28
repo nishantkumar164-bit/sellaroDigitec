@@ -302,7 +302,7 @@ const Navbar = ({ currency, onCurrencyToggle }) => {
             className={`transition-all duration-500 ${isScrolled ? 'scale-90' : 'scale-100'
               }`}
           >
-            <Link to="/contact">
+            <Link to="/free-audit">
               <Button variant="primary" size="sm">
                 Get Free Audit
               </Button>
