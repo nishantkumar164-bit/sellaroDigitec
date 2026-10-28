@@ -122,26 +122,6 @@ const serviceCategories = [
         path: '/services/custom-website'
       }
     ]
-  },
-  {
-    title: 'Business Compliance',
-    icon: ShieldCheck,
-    description:
-      'Business registration and compliance services handled by professionals.',
-    services: [
-      {
-        name: 'GST Registration',
-        path: '/services/gst'
-      },
-      {
-        name: 'Trademark Registration',
-        path: '/services/trademark'
-      },
-      {
-        name: 'Company Registration',
-        path: '/services/company-registration'
-      }
-    ]
   }
 ];
 
