@@ -38,7 +38,7 @@ const initialForm = {
   name: '',
   email: '',
   phone: '',
-  marketplace: 'Amazon',
+  marketplace: 'Store',
   storeUrl: '',
   productUrls: ['', '', ''],
 };
