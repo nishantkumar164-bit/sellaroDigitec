@@ -18,27 +18,13 @@ import {
 import GlassModal from '../components/common/GlassModal';
 import AuditReport from '../pages/AuditReport';
 
-const MARKETPLACES = [
-  'Amazon',
-  'Amazon global',
-  'Flipkart',
-  'Meesho',
-  'Etsy',
-  'Walmart',
-  'eBay',
-  'JioMart',
-  'Shopify',
-  'Wordpress',
-  'Other',
-];
-
 const API_BASE_URL = 'https://sj39lg4vy1.execute-api.ap-south-1.amazonaws.com';
 
 const initialForm = {
   name: '',
   email: '',
   phone: '',
-  marketplace: 'Store',
+  marketplace: '',
   storeUrl: '',
   productUrls: ['', '', ''],
 };
@@ -49,6 +35,19 @@ const isValidHttpUrl = (value) => {
     return ['http:', 'https:'].includes(url.protocol);
   } catch {
     return false;
+  }
+};
+
+const getStoreName = (storeUrl, productUrls = []) => {
+  const urlToUse =
+    storeUrl?.trim() || productUrls.find((url) => url?.trim())?.trim();
+
+  if (!urlToUse) return 'Online Store';
+
+  try {
+    return new URL(urlToUse).hostname.replace(/^www\./i, '');
+  } catch {
+    return 'Online Store';
   }
 };
 
@@ -107,6 +106,7 @@ const FreeAudit = () => {
     const email = form.email.trim().toLowerCase();
     const phone = form.phone.trim();
     const storeUrl = form.storeUrl.trim();
+    const storeName = getStoreName(storeUrl, productUrls);
 
     if (!name) nextErrors.name = 'Please enter your name.';
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -133,14 +133,14 @@ const FreeAudit = () => {
         idempotencyKey: makeIdempotencyKey(),
         reportAccessToken: makeRandomToken(),
         requestFingerprint: JSON.stringify({
-          name, email, phone, marketplace: form.marketplace, storeUrl, productUrls,
+          name, email, phone, marketplace: storeName, storeUrl, productUrls,
         }),
       };
     }
 
     const credentials = credentialsRef.current;
     const currentFingerprint = JSON.stringify({
-      name, email, phone, marketplace: form.marketplace, storeUrl, productUrls,
+      name, email, phone, marketplace: storeName, storeUrl, productUrls,
     });
 
     if (credentials.requestFingerprint !== currentFingerprint) {
@@ -170,7 +170,7 @@ const FreeAudit = () => {
           name,
           email,
           phone,
-          marketplace: form.marketplace,
+          marketplace: storeName,
           storeUrl: storeUrl || null,
           productUrls,
           reportAccessToken: activeCredentials.reportAccessToken,
