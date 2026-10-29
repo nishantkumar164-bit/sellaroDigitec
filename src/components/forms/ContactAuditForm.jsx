@@ -2,6 +2,17 @@ import React, { useState } from 'react';
 import { Send, CheckCircle2 } from 'lucide-react';
 import Button from '../common/Button';
 
+
+const trackMetaLead = (contentName) => {
+    if (typeof window !== 'undefined' &&
+        typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead', {
+            content_name: contentName,
+        });
+    }
+};
+
+
 const ContactAuditForm = () => {
     const API_URL = import.meta.env.VITE_CONTACT_API;
 
@@ -87,6 +98,9 @@ const ContactAuditForm = () => {
                 marketplace: 'Amz India',
                 message: '',
             });
+
+            // Track only after the backend confirms success.
+            trackMetaLead('Free Ecommerce Growth Audit');
 
             setStatus('success');
         } catch (error) {
