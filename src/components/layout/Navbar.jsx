@@ -541,9 +541,9 @@ const Navbar = ({ currency, onCurrencyToggle }) => {
 
           <div className="h-px bg-slate-200/80 my-2" />
 
-          <Link to="/contact" onClick={() => setIsOpen(false)}>
+          <Link to="/free-audit" onClick={() => setIsOpen(false)}>
             <Button variant="primary" size="md" className="w-full mt-2">
-              Get Free Audit
+              Get Free Webstore Audit
             </Button>
           </Link>
         </div>
