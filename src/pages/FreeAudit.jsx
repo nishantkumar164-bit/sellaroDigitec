@@ -18,6 +18,17 @@ import {
 import GlassModal from '../components/common/GlassModal';
 import AuditReport from '../pages/AuditReport';
 
+const trackMetaLead = (contentName) => {
+  if (
+    typeof window !== 'undefined' &&
+    typeof window.fbq === 'function'
+  ) {
+    window.fbq('track', 'Lead', {
+      content_name: contentName,
+    });
+  }
+};
+
 const API_BASE_URL = 'https://sj39lg4vy1.execute-api.ap-south-1.amazonaws.com';
 
 const initialForm = {
@@ -186,6 +197,8 @@ const FreeAudit = () => {
       if (!data.auditId) {
         throw new Error('The API accepted the request but did not return an audit ID.');
       }
+      // Track the accepted audit request.
+      trackMetaLead('Free Webstore Audit');
 
       setAuditId(data.auditId);
       setReportAccessToken(data.reportAccessToken || activeCredentials.reportAccessToken);

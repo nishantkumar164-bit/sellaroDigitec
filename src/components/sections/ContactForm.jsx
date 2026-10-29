@@ -3,6 +3,17 @@ import { Send, CheckCircle2, LoaderCircle } from 'lucide-react';
 import Button from '../common/Button';
 import Card from '../common/Card';
 
+const trackMetaLead = (contentName) => {
+  if (
+    typeof window !== 'undefined' &&
+    typeof window.fbq === 'function'
+  ) {
+    window.fbq('track', 'Lead', {
+      content_name: contentName,
+    });
+  }
+};
+
 const ContactForm = () => {
   console.log("API URL =", import.meta.env.VITE_CONTACT_API);
   const [formData, setFormData] = useState({
@@ -96,6 +107,7 @@ const ContactForm = () => {
         marketplace: 'Amz India',
         message: ''
       });
+      trackMetaLead('Contact Page Form');
       setStatus('success');
     } catch (error) {
       console.error('Contact form submission failed:', error);
