@@ -247,6 +247,13 @@ const App = () => {
           href="https://wa.me/+919031047291"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => {
+            if (typeof window.fbq === 'function') {
+              window.fbq('trackCustom', 'WhatsAppEnquiry', {
+                content_name: 'Floating WhatsApp Button',
+              });
+            }
+          }}
           className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-3.5 rounded-full shadow-[0_4px_14px_0_rgba(37,211,102,0.39)] hover:shadow-[0_6px_20px_rgba(37,211,102,0.23)] hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
           aria-label="Contact us on WhatsApp"
         >
