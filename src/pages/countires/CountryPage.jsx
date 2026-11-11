@@ -1,41 +1,22 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import countryData from "./countryData";
+import SEO from "../../components/common/SEO";
 
 const CountryPage = ({ country, onOpenForm }) => {
   const data = countryData[country];
 
-  useEffect(() => {
-    if (!data) return;
+  <>
+  <SEO
+    title={data.metaTitle}
+    description={data.metaDescription}
+    canonical={`/${data.slug}`}
+  />
 
-    document.title = data.metaTitle;
-
-    let description = document.querySelector(
-      'meta[name="description"]'
-    );
-
-    if (!description) {
-      description = document.createElement("meta");
-      description.setAttribute("name", "description");
-      document.head.appendChild(description);
-    }
-
-    description.setAttribute("content", data.metaDescription);
-
-    // Canonical URL
-    let canonical = document.querySelector('link[rel="canonical"]');
-
-    if (!canonical) {
-      canonical = document.createElement("link");
-      canonical.setAttribute("rel", "canonical");
-      document.head.appendChild(canonical);
-    }
-
-    canonical.setAttribute(
-      "href",
-      `${window.location.origin}/${data.slug}`
-    );
-  }, [data]);
+  <div className="bg-white text-slate-800">
+    {/* Existing CountryPage content */}
+  </div>
+</>
 
   if (!data) {
     return (

@@ -151,7 +151,7 @@ const App = () => {
             />
             <Route path="/services/flipkart" element={<FlipkartAccount onOpenForm={handleOpenContactModal} />} />
             <Route path="/services/meesho" element={<MeeshoAccount onOpenForm={handleOpenContactModal} />} />
-            <Route path="/services/joimart" element={<JoimartAccount onOpenForm={handleOpenContactModal} />} />
+            <Route path="/services/jiomart" element={<JoimartAccount onOpenForm={handleOpenContactModal} />} />
             <Route path="/services/ebay" element={<EbayAccount onOpenForm={handleOpenContactModal} />} />
             <Route path="/services/etsy" element={<EtsyAccount onOpenForm={handleOpenContactModal} />} />
             <Route path="/services/walmart" element={<WalmartAccount onOpenForm={handleOpenContactModal} />} />

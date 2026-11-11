@@ -1,6 +1,6 @@
 
 import React, { useEffect, useRef, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEO from '../components/common/SEO';
 import {
   ArrowRight,
   CheckCircle2,
@@ -285,13 +285,11 @@ const FreeAudit = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Free Marketplace Listing Audit | Sellaro Digitec</title>
-        <meta
-          name="description"
-          content="Check your marketplace product listings for potential improvements with Sellaro Digitec's free listing audit."
-        />
-      </Helmet>
+      <SEO
+  title="Free Ecommerce Audit | Marketplace Listing Audit | Sellaro Digitec"
+  description="Get a free ecommerce audit from Sellaro Digitec. Analyze your Amazon, Flipkart and other marketplace product listings and discover opportunities to improve listing quality, content and visibility."
+  canonical="/free-audit"
+/>
 
       <section className="relative isolate overflow-hidden bg-slate-50 bg-blueprint-grid px-4 py-14 sm:py-20">
         <div className="glow-orb-blue pointer-events-none absolute -left-32 top-0 h-96 w-96 rounded-full" />

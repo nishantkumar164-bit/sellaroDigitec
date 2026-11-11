@@ -8,10 +8,16 @@ import Testimonials from '../components/sections/Testimonials';
 import ContactForm from '../components/sections/ContactForm';
 import FAQ from '../components/sections/FAQ';
 import ContactCTA from '../components/sections/ContactCTA';
+import SEO from '../components/common/SEO';
 
 const Home = ({ onOpenForm, currency, onCurrencyToggle, handleScrollToROI }) => {
   return (
     <>
+    <SEO
+      title="Sellaro Digitec | Ecommerce & Marketplace Management Services"
+      description="Grow your ecommerce business with expert marketplace account management, Shopify solutions, digital marketing and ecommerce services."
+      canonical="/"
+    />
       <Hero
         onOpenForm={onOpenForm}
         onScrollToROI={handleScrollToROI}

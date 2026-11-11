@@ -3,6 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, CalendarDays } from 'lucide-react';
 import blogPosts from './blogData/blogPosts.json';
+import SEO from "../../components/common/SEO";
 
 const Blog = () => {
   const publishedPosts = blogPosts
@@ -13,6 +14,13 @@ const Blog = () => {
     );
 
   return (
+<>
+    <SEO
+  title="Ecommerce Insights, Guides & Strategies | Sellaro Digitec"
+  description="Explore practical guides on marketplace management, ecommerce operations and digital marketing."
+  canonical="/blog"
+/>
+    
     <section className="relative min-h-screen overflow-hidden bg-slate-50">
       {/* Subtle background decoration */}
       <div
@@ -127,6 +135,7 @@ const Blog = () => {
         )}
       </div>
     </section>
+    </>
   );
 };
 

@@ -5,6 +5,7 @@ import ContactProcess from '../components/sections/ContactProcess';
 import ContactCards from '../components/sections/ContactCards';
 import ContactFAQ from '../components/sections/ContactFAQ';
 import ContactCTA from '../components/sections/ContactCTA';
+import SEO from '../components/common/SEO';
 
 
 const platforms = [
@@ -21,6 +22,12 @@ const platforms = [
 
 const Contact = () => {
   return (
+    <>
+     <SEO
+      title="Contact Sellaro Digitec | Ecommerce & Marketplace Experts"
+      description="Get in touch with Sellaro Digitec for ecommerce marketplace management, Amazon account management, Shopify development and digital marketing services. Let's grow your business."
+      canonical="/contact"
+    />
     <div className="relative overflow-hidden min-h-screen bg-gradient-to-b from-white via-orange-50/20 to-white">
 
       {/* Top Glow */}
@@ -85,6 +92,7 @@ const Contact = () => {
 
       </div>
     </div>
+    </>
   );
 };
 
