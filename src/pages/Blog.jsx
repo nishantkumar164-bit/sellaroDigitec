@@ -11,7 +11,7 @@ const Blog = () => {
     .sort(
       (a, b) =>
         new Date(b.publishedAt) - new Date(a.publishedAt)
-    );
+    );  
 
   return (
 <>
@@ -140,3 +140,5 @@ const Blog = () => {
 };
 
 export default Blog;
+
+
