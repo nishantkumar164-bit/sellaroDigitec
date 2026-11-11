@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, BookOpen, CalendarDays } from 'lucide-react';
 import blogPosts from './blogData/blogPosts.json';
-import SEO from "../../components/common/SEO";
+import SEO from "../components/common/SEO";
 
 const Blog = () => {
   const publishedPosts = blogPosts
