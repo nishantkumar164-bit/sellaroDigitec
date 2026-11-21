@@ -148,7 +148,7 @@ const Navbar = ({ currency, onCurrencyToggle }) => {
                       { name: 'Amz Account', to: '/services/amazon' },
                       { name: 'Flipkart Account', to: '/services/flipkart' },
                       { name: 'Meesho Account', to: '/services/meesho' },
-                      { name: 'JioMart Account', to: '/services/joimart' },
+                      { name: 'JioMart Account', to: '/services/jiomart-account-management' },
                       { name: 'eBay Account', to: '/services/ebay' },
                       { name: 'Etsy Account', to: '/services/etsy' },
                       { name: 'Walmart Account', to: '/services/walmart' }
@@ -399,7 +399,7 @@ const Navbar = ({ currency, onCurrencyToggle }) => {
                         { name: 'Amz Account', to: '/services/amazon' },
                         { name: 'Flipkart Account', to: '/services/flipkart' },
                         { name: 'Meesho Account', to: '/services/meesho' },
-                        { name: 'JioMart Account', to: '/services/joimart' },
+                        { name: 'JioMart Account', to: '/services/jiomart-account-management' },
                         { name: 'eBay Account', to: '/services/ebay' },
                         { name: 'Etsy Account', to: '/services/etsy' },
                         { name: 'Walmart Account', to: '/services/walmart' }
