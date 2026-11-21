@@ -4,7 +4,7 @@ import Card from '../common/Card';
 import React, { useState } from 'react';
 import GlassModal from '../common/GlassModal';
 import { useNavigate } from 'react-router-dom';
-import SEO from "../components/common/SEO";
+import SEO from "../common/SEO";
 
 
 const Services = () => {
