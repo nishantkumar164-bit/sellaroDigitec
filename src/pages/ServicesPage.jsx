@@ -39,7 +39,7 @@ const serviceCategories = [
       },
       {
         name: 'JioMart',
-        path: '/services/jiomart'
+        path: '/services/jiomart-account-management'
       },
       {
         name: 'Walmart',
