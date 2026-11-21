@@ -4,6 +4,8 @@ import Card from '../common/Card';
 import React, { useState } from 'react';
 import GlassModal from '../common/GlassModal';
 import { useNavigate } from 'react-router-dom';
+import SEO from "../components/common/SEO";
+
 
 const Services = () => {
   const [selectedStory, setSelectedStory] = useState(null);
@@ -407,6 +409,14 @@ const Services = () => {
   ];
 
   return (
+    <>
+    <SEO
+      title="Ecommerce Services & Solutions | Sellaro Digitec"
+
+description="Discover specialized ecommerce solutions including marketplace account management, Amazon and Flipkart growth, Shopify and WordPress development, product catalog design, and online advertising."
+
+canonical="/services"
+    />
     <section
       id="services"
       className="relative pt-8 pb-20 md:pt-12 md:pb-24 overflow-hidden bg-obsidian-950"
@@ -750,6 +760,7 @@ min-h-[520px]
       </GlassModal>
 
     </section>
+    </>
   );
 };
 
